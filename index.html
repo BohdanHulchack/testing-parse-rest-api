@@ -9,28 +9,30 @@
 	</head>
 	<body>
 		<div class="conteiner-fluid">
+			<h1>Chat with Parse REST API</h1>
+			<div class="row-fluid">
+				<form action="">
+					<input class="form-intput"type="text" name="username" placeholder="username">
+					<input class="form-intput"type="text" name="surename" placeholder="surename">
+					<input class="form-intput"type="text" name="message" placeholder="message">
+					<a href="" class="btn btn-primary" id="send">SEND</a>
+				</form>
+			</div>
 			<div class="row-fluid ">
-				<h1>Chat with Parse REST API</h1>
 				<div class="table table table-bordered">
-					<caption>Guest Shortlist</caption>
-					<thead>
+					<div class="thead">
 						<tr>
-							<th>Username</th>
-							<th>Surename</th>
+							<td>Username</td>
+							<td>Surename</td>
+							<td>message</td>
 						</tr>
-					</thead>
+					</div>
 					<div class="tbody">
 						<tr>
 							<td colspan="2">No messeges</td>
 						</tr>
 					</div>
 				</div>
-			</div>
-			<div class="row-fluid">
-				<form action=""></form>
-				<input type="text" name="username" placeholder="username">
-				<input type="text" name="surename" placeholder="surename">
-				<a href="" class="btn btn-primary" id="send">SEND</a>
 			</div>
 		</div>
 	</body>
