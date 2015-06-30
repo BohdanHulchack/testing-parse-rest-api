@@ -1,12 +1,14 @@
 jQuery(document).ready(function ($) {
 	var parseId = "IMt3CmaP2RxCg9QDzkubiHFFLh1KRPpQe84qYF24",
 		parseRestKey = "vVlGwcSyuDzjR4jD1vSjZOE0mR7bdGI4NITEPyzD",
-		table = $('.tbody');
-	getMessages();
+		table = $('#tbody'),
+		sendBtn = $("#send");
 
+	getMessages();
+	updateDelate();
 
 	function updateDelate() {
-		$(".delate").on('click', function (event) {
+		table.on('click', '.delete', function (event) {
 			var userId = event.target.id;
 			$.ajax({
 				url: 'https://api.parse.com/1/classes/MessageBoard/' + userId,
@@ -25,10 +27,11 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
-	$("#send").click(function () {
+	sendBtn.click(function () {
 		var username = $("input[name=username]").attr("value"),
 			surename = $("input[name=surename]").attr("value"),
 			message = $("input[name=message]").attr("value");
+
 		$.ajax({
 			url: 'https://api.parse.com/1/classes/MessageBoard',
 			headers: {
@@ -76,10 +79,8 @@ jQuery(document).ready(function ($) {
 	function updateView(messages) {
 		var trEl;
 		$.each(messages.results, function (index, value) {
-			trEl += '<tr><td>' + (++index) + '</td><td>' + value.username + '</td><td>' + value.surename + '</td><td>' + value.message + '</td><td><a id="' + value.objectId + '" class="btn btn-danger delate">X</a></td></tr>';
+			trEl += '<tr><td>' + (++index) + '</td><td>' + value.username + '</td><td>' + value.surename + '</td><td>' + value.message + '</td><td><a id="' + value.objectId + '" class="button alert round delete">X</a></td></tr>';
 		});
 		table.html('').append(trEl);
-		updateDelate();
-		console.log(messages);
 	}
 });

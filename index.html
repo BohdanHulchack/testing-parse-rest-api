@@ -1,39 +1,46 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="js/app.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div class="conteiner-fluid">
 			<h1>Chat with Parse REST API</h1>
-			<div class="row-fluid">
+			<div class="row">
 				<form action="">
 					<input class="form-intput"type="text" name="username" placeholder="username">
 					<input class="form-intput"type="text" name="surename" placeholder="surename">
 					<input class="form-intput"type="text" name="message" placeholder="message">
-					<a href="" class="btn btn-primary" id="send">SEND</a>
+					<a href="" class="button round small" id="send">SEND</a>
 				</form>
 			</div>
-			<div class="row-fluid ">
-				<div class="table table table-bordered">
-					<div class="thead">
+			<div class="row" id="table_cont">
+			<div class="overlay"></div>
+				<table>
+					<thead>
 						<tr>
-							<td>Username</td>
-							<td>Surename</td>
-							<td>message</td>
+						  <th>#</th>
+							<th>Username</th>
+							<th>Surename</th>
+							<th>Message</th>
+							<th>Delete</th>
 						</tr>
-					</div>
-					<div class="tbody">
+					</thead>
+					<tbody id="tbody">
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
 						<tr>
 							<td colspan="2">No messeges</td>
 						</tr>
-					</div>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</div>
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>
